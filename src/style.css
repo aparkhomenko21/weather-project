@@ -21,7 +21,7 @@ a {
 }
 
 .mb-3 {
-  margin: 70px 50px 20px;
+  margin: 30px 50px 20px;
   width: 75%;
 }
 
@@ -109,4 +109,9 @@ a {
   font-size: 14px;
   box-shadow: 0 5px 20px 5px rgb(0 0 0 / 10%);
   transition: all 150ms ease-in-out;
+}
+
+.footer {
+  margin-left: 50px;
+  margin-bottom: 15px;
 }

@@ -24,110 +24,118 @@
   </head>
 
   <body>
-    <div class="container"></div>
-    <div class="input-group mb-3" id="city-search">
-      <input
-        type="text"
-        class="form-control"
-        placeholder="Search"
-        autofocus="on"
-        autocomplete="off"
-        id="city-search-input"
-      />
-      <button class="current-location" id="location">Location</button>
-    </div>
-    <div class="current-weather">
-      <p>Current weather</p>
-      <p id="current-time"></p>
-      <div class="row">
-        <div class="col-3">
-          <h1 id="city">- - - -</h1>
-          <i class="fa-regular fa-sun"></i>
-          <p>
-            <span id="weather-description"> - - - - </span>
-          </p>
-        </div>
-        <div class="col-4">
-          <h1>
-            <span id="current-temperature"> - - </span>
-            <span class="degrees-measurment">
-              <a href="#" id="celsius">°C</a> |
-              <a href="#" id="fahrenheit">°F</a>
-            </span>
-          </h1>
-        </div>
-        <div class="col-5">
-          <p>
-            Feels like <span id="feels-like-temperature"> - - °C</span>
-            <br />
-            <span class="weather-span">
-              <span id="minimum-temperature"> - - ° </span>
-              /
-              <span id="maximum-temperature"> - - ° </span>
-            </span>
-          </p>
-
-          <div class="row">
-            <div class="col">
-              <p>
-                Humidity
-                <br />
-                Wind
-              </p>
-            </div>
-            <div class="col">
-              <p>
-                <span id="humidity"> - - </span>
-                <br />
-                <span id="wind"> - - </span>
-              </p>
+    <div class="container">
+      <div class="input-group mb-3" id="city-search">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Search"
+          autofocus="on"
+          autocomplete="off"
+          id="city-search-input"
+        />
+        <button class="current-location" id="location">Location</button>
+      </div>
+      <div class="current-weather">
+        <p>Current weather</p>
+        <p id="current-time"></p>
+        <div class="row">
+          <div class="col-3">
+            <h1 id="city">- - - -</h1>
+            <i class="fa-regular fa-sun"></i>
+            <p>
+              <span id="weather-description"> - - - - </span>
+            </p>
+          </div>
+          <div class="col-4">
+            <h1>
+              <span id="current-temperature"> - - </span>
+              <span class="degrees-measurment">
+                <a href="#" id="celsius">°C</a> |
+                <a href="#" id="fahrenheit">°F</a>
+              </span>
+            </h1>
+          </div>
+          <div class="col-5">
+            <p>
+              Feels like <span id="feels-like-temperature"> - - °C</span>
+              <br />
+              <span class="weather-span">
+                <span id="minimum-temperature"> - - ° </span>
+                /
+                <span id="maximum-temperature"> - - ° </span>
+              </span>
+            </p>
+            <div class="row">
+              <div class="col">
+                <p>
+                  Humidity
+                  <br />
+                  Wind
+                </p>
+              </div>
+              <div class="col">
+                <p>
+                  <span id="humidity"> - - </span>
+                  <br />
+                  <span id="wind"> - - </span>
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="week-forcast">
-      <div class="row">
-        <div class="col">
-          <h4>Fri</h4>
-          <p>
-            <i class="fa-regular fa-sun"></i>
-            Sunny
-            <span class="forecast-temperature"> 16°/ 25° </span>
-          </p>
+      <div class="week-forcast">
+        <div class="row">
+          <div class="col">
+            <h4>Fri</h4>
+            <p>
+              <i class="fa-regular fa-sun"></i>
+              Sunny
+              <span class="forecast-temperature"> 16°/ 25° </span>
+            </p>
+          </div>
+          <div class="col">
+            <h4>Sat</h4>
+            <p>
+              <i class="fa-regular fa-sun"></i>
+              Sunny
+              <span class="forecast-temperature"> 17°/ 28° </span>
+            </p>
+          </div>
+          <div class="col">
+            <h4>Sun</h4>
+            <p>
+              <i class="fa-regular fa-sun"></i>
+              Sunny
+              <span class="forecast-temperature"> 13°/ 24° </span>
+            </p>
+          </div>
+          <div class="col">
+            <h4>Mon</h4>
+            <p>
+              <i class="fa-regular fa-sun"></i>
+              Sunny
+              <span class="forecast-temperature"> 20°/ 32° </span>
+            </p>
+          </div>
+          <div class="col">
+            <h4>Tue</h4>
+            <p>
+              <i class="fa-regular fa-sun"></i>
+              Sunny
+              <span class="forecast-temperature"> 22°/ 34° </span>
+            </p>
+          </div>
         </div>
-        <div class="col">
-          <h4>Sat</h4>
-          <p>
-            <i class="fa-regular fa-sun"></i>
-            Sunny
-            <span class="forecast-temperature"> 17°/ 28° </span>
-          </p>
-        </div>
-        <div class="col">
-          <h4>Sun</h4>
-          <p>
-            <i class="fa-regular fa-sun"></i>
-            Sunny
-            <span class="forecast-temperature"> 13°/ 24° </span>
-          </p>
-        </div>
-        <div class="col">
-          <h4>Mon</h4>
-          <p>
-            <i class="fa-regular fa-sun"></i>
-            Sunny
-            <span class="forecast-temperature"> 20°/ 32° </span>
-          </p>
-        </div>
-        <div class="col">
-          <h4>Tue</h4>
-          <p>
-            <i class="fa-regular fa-sun"></i>
-            Sunny
-            <span class="forecast-temperature"> 22°/ 34° </span>
-          </p>
-        </div>
+      </div>
+      <div class="footer">
+        <a
+          href="https://github.com/aparkhomenko21/weather-project"
+          target="_blank"
+          >Open-source code</a
+        >
+        by Anna Parkhomenko
       </div>
     </div>
     <script src="src/index.js"></script>
