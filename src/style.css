@@ -23,6 +23,7 @@ a {
 .mb-3 {
   margin: 30px 50px 20px;
   width: 75%;
+  max-width: 700px;
 }
 
 .fa-sun {
@@ -36,6 +37,7 @@ a {
   margin: 20px 50px 20px;
   padding: 25px;
   width: 75%;
+  max-width: 700px;
 }
 
 .current-weather p {
@@ -80,6 +82,7 @@ a {
   font-size: 15px;
   font-weight: 600;
   color: rgb(87, 87, 87);
+  max-width: 700px;
 }
 
 .week-forcast .fa-sun {
