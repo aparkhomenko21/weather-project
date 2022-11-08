@@ -26,10 +26,10 @@ let currentDate = document.querySelector("#current-time");
 currentDate.innerHTML = formatDate(currentTime);
 
 function search(city) {
-  let apiKey = "cd6ee0a45e487c4d00f0679648792bc6";
+  let apiKey = "95f1fa4890db228t0ade7ff3b54e18o5";
   let unit = "metric";
-  let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather?";
-  let apiUrl = `${apiEndpoint}q=${city}&appid=${apiKey}&units=${unit}`;
+  let apiEndpoint = "https://api.shecodes.io/weather/v1/current?";
+  let apiUrl = `${apiEndpoint}query=${city}&key=${apiKey}&units=${unit}`;
   axios.get(apiUrl).then(showTemp);
 }
 
@@ -42,7 +42,10 @@ function showCity(event) {
 function showLocationTemperature(position) {
   let longitude = position.coords.longitude;
   let latitude = position.coords.latitude;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=cd6ee0a45e487c4d00f0679648792bc6&units=metric`;
+  let apiKey = "95f1fa4890db228t0ade7ff3b54e18o5";
+  let unit = "metric";
+  let apiEndpoint = "https://api.shecodes.io/weather/v1/current?";
+  let apiUrl = `${apiEndpoint}lon=${longitude}&lat=${latitude}&key=${apiKey}&units=${unit}`;
   axios.get(apiUrl).then(showTemp);
 }
 
@@ -70,27 +73,23 @@ let fahrenheit = document.querySelector("#fahrenheit");
 fahrenheit.addEventListener("click", changeFahrenheit);
 
 function showTemp(response) {
+  console.log(response);
   document.querySelector("#current-temperature").innerHTML = Math.round(
-    response.data.main.temp
+    response.data.temperature.current
   );
+
   document.querySelector("#weather-description").innerHTML =
-    response.data.weather[0].main;
+    response.data.condition.description;
   document.querySelector("#feels-like-temperature").innerHTML = `${Math.round(
-    response.data.main.feels_like
+    response.data.temperature.feels_like
   )}°C`;
-  document.querySelector("#minimum-temperature").innerHTML = `${Math.round(
-    response.data.main.temp_min
-  )}°`;
-  document.querySelector("#maximum-temperature").innerHTML = `${Math.round(
-    response.data.main.temp_max
-  )}°`;
   document.querySelector(
     "#humidity"
-  ).innerHTML = `${response.data.main.humidity}%`;
+  ).innerHTML = `${response.data.temperature.humidity}%`;
   document.querySelector("#wind").innerHTML = `${Math.round(
     response.data.wind.speed
   )} m/s`;
-  document.querySelector("#city").innerHTML = response.data.name;
+  document.querySelector("#city").innerHTML = response.data.city;
 }
 
 let searchForm = document.querySelector("#city-search");
@@ -98,4 +97,5 @@ searchForm.addEventListener("input", showCity);
 
 let button = document.querySelector("#location");
 button.addEventListener("click", showPosition);
+
 search("Kyiv");
