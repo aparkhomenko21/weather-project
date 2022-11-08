@@ -73,11 +73,9 @@ let fahrenheit = document.querySelector("#fahrenheit");
 fahrenheit.addEventListener("click", changeFahrenheit);
 
 function showTemp(response) {
-  console.log(response);
   document.querySelector("#current-temperature").innerHTML = Math.round(
     response.data.temperature.current
   );
-
   document.querySelector("#weather-description").innerHTML =
     response.data.condition.description;
   document.querySelector("#feels-like-temperature").innerHTML = `${Math.round(
@@ -90,6 +88,12 @@ function showTemp(response) {
     response.data.wind.speed
   )} m/s`;
   document.querySelector("#city").innerHTML = response.data.city;
+  document
+    .querySelector("#icon")
+    .setAttribute("src", response.data.condition.icon_url);
+  document
+    .querySelector("#icon")
+    .setAttribute("alt", response.data.condition.description);
 }
 
 let searchForm = document.querySelector("#city-search");
