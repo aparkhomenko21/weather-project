@@ -5,7 +5,6 @@ body {
 }
 
 h1 {
-  margin-left: 29px;
   margin-bottom: 20px;
   font-weight: 300;
   color: black;
@@ -17,9 +16,7 @@ h4 {
 
 a {
   text-decoration: none;
-  color: black;
 }
-
 .mb-3 {
   margin: 30px 50px 20px;
   width: 75%;
@@ -50,7 +47,7 @@ a {
 }
 
 .current-weather .col-3 p {
-  margin-left: 29px;
+  margin-left: px;
   margin-top: 20px;
 }
 
@@ -125,4 +122,8 @@ a {
 
 .weather-description:first-letter {
   text-transform: capitalize;
+}
+
+.active {
+  color: black;
 }

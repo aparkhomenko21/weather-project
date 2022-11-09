@@ -56,8 +56,10 @@ function showPosition(event) {
 
 function changeCelsius(event) {
   event.preventDefault();
-  let celsiusSign = document.querySelector("#current-temperature");
-  celsiusSign.innerHTML = "30";
+  fahrenheit.classList.remove("active");
+  celsius.classList.add("active");
+  let celsiusElement = document.querySelector("#current-temperature");
+  celsiusElement.innerHTML = Math.round(celsiusTemperature);
 }
 
 let celsius = document.querySelector("#celsius");
@@ -65,17 +67,22 @@ celsius.addEventListener("click", changeCelsius);
 
 function changeFahrenheit(event) {
   event.preventDefault();
-  let fahrenheitSign = document.querySelector("#current-temperature");
-  fahrenheitSign.innerHTML = "86";
+  let temperatureElement = document.querySelector("#current-temperature");
+  celsius.classList.remove("active");
+  fahrenheit.classList.add("active");
+  let fahrenheitElement = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitElement);
 }
 
 let fahrenheit = document.querySelector("#fahrenheit");
 fahrenheit.addEventListener("click", changeFahrenheit);
 
+let celsiusTemperature = null;
+
 function showTemp(response) {
-  document.querySelector("#current-temperature").innerHTML = Math.round(
-    response.data.temperature.current
-  );
+  celsiusTemperature = response.data.temperature.current;
+  document.querySelector("#current-temperature").innerHTML =
+    Math.round(celsiusTemperature);
   document.querySelector("#weather-description").innerHTML =
     response.data.condition.description;
   document.querySelector("#feels-like-temperature").innerHTML = `${Math.round(
