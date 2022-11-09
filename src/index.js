@@ -104,7 +104,7 @@ function showTemp(response) {
 }
 
 let searchForm = document.querySelector("#city-search");
-searchForm.addEventListener("input", showCity);
+searchForm.addEventListener("submit", showCity);
 
 let button = document.querySelector("#location");
 button.addEventListener("click", showPosition);
