@@ -91,6 +91,29 @@ function changeFahrenheit(event) {
   temperatureElement.innerHTML = Math.round(fahrenheitElement);
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+        <div class="col">
+          <h4>${day}</h4>
+          <p>
+          <i class="fa-regular fa-sun"></i>
+          Sunny
+          <span class="forecast-temperature"> 16°/ 25° </span>
+          </p>
+        </div>
+  `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 let currentTime = new Date();
 let currentDate = document.querySelector("#current-time");
 currentDate.innerHTML = formatDate(currentTime);
@@ -110,3 +133,4 @@ fahrenheit.addEventListener("click", changeFahrenheit);
 let celsiusTemperature = null;
 
 search("Kyiv");
+displayForecast();
