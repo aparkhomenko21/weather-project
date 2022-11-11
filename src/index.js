@@ -99,24 +99,37 @@ function changeFahrenheit(event) {
   temperatureElement.innerHTML = Math.round(fahrenheitElement);
 }
 
+function formatDay(timeStamp) {
+  let date = new Date(timeStamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
+
   let forecastElement = document.querySelector("#forecast");
-  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
   let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
         <div class="col">
-          <h4>${day}</h4>
+          <h4>${formatDay(forecastDay.time)}</h4>
           <p>
-          <i class="fa-regular fa-sun"></i>
-          Sunny
-          <span class="forecast-temperature"> 16°/ 25° </span>
+          <img src=${forecastDay.condition.icon_url} alt=${
+          forecastDay.condition.icon
+        } />
+          <h6>Sunny</h6>
+          <span class="forecast-temperature">${Math.round(
+            forecastDay.temperature.minimum
+          )}°/ ${Math.round(forecastDay.temperature.maximum)}°</span>
           </p>
         </div>
   `;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
