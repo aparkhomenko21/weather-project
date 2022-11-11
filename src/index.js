@@ -50,6 +50,12 @@ function showLocationTemperature(position) {
   axios.get(apiUrl).then(showTemp);
 }
 
+function getForecast(coordinates) {
+  let apiKey = "95f1fa4890db228t0ade7ff3b54e18o5";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lat=${coordinates.latitude}&lon=${coordinates.longitude}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function showTemp(response) {
   celsiusTemperature = response.data.temperature.current;
   document.querySelector("#current-temperature").innerHTML =
@@ -72,6 +78,8 @@ function showTemp(response) {
   document
     .querySelector("#icon")
     .setAttribute("alt", response.data.condition.description);
+
+  getForecast(response.data.coordinates);
 }
 
 function changeCelsius(event) {
@@ -91,7 +99,8 @@ function changeFahrenheit(event) {
   temperatureElement.innerHTML = Math.round(fahrenheitElement);
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
   let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
   let forecastHTML = `<div class="row">`;
@@ -133,4 +142,3 @@ fahrenheit.addEventListener("click", changeFahrenheit);
 let celsiusTemperature = null;
 
 search("Kyiv");
-displayForecast();
