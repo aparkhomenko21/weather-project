@@ -1,6 +1,4 @@
 body {
-  font-family: "Koulen", cursive;
-  font-family: "Macondo", cursive;
   font-family: "Roboto Flex", sans-serif;
 }
 
@@ -18,10 +16,6 @@ a {
   text-decoration: none;
 }
 
-.fa-sun {
-  color: #fec801;
-  display: block;
-}
 .current-weather {
   border: 1px solid;
   border-color: #ced4da;
@@ -34,11 +28,6 @@ a {
 
 .current-weather p {
   color: rgb(87, 87, 87);
-}
-
-.current-weather .fa-sun {
-  font-size: 110px;
-  margin-left: 10px;
 }
 
 .current-weather .col-3 p {
@@ -55,13 +44,6 @@ a {
   margin-top: 16px;
 }
 
-.weather-span {
-  display: block;
-  margin-top: 15px;
-  font-size: 28px;
-  color: black;
-}
-
 .week-forcast {
   border: 1px solid;
   border-color: #ced4da;
@@ -74,12 +56,6 @@ a {
   font-weight: 600;
   color: rgb(87, 87, 87);
   max-width: 700px;
-}
-
-.week-forcast .fa-sun {
-  font-size: 70px;
-  margin-top: 20px;
-  margin-bottom: 20px;
 }
 
 .forecast-temperature {
@@ -98,14 +74,18 @@ a {
   margin-left: 50px;
   margin-bottom: 15px;
   color: black;
+  font-size: 15px;
+  font-weight: 300;
 }
 
 .footer a {
   color: black;
+  font-weight: 400;
 }
 .footer a:hover {
   color: #1b72e8;
 }
+
 .weather-description {
   display: block;
 }
